@@ -31,7 +31,7 @@ variable "availability_zone_2" {
 variable "ssh_key_name" {
   description = "The name of the SSH key pair to be created"
   type = string
-  default = "ilhem_key"
+  default = "cherif_key"
 }
 # EC2 Instance Type
 variable "instance_type" {
