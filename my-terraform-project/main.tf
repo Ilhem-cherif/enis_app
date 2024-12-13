@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket= "enis-terraform-for-state-file-0125-07f6b00d" # Replace with your S3 bucket name
+    bucket= "enis-terraform-for-state-file-0125-44d5b6b9" # Replace with your S3 bucket name
     key = "aws-backend/terraform.tfstate" # Location of the state file in the bucket
     region = "us-east-1" # AWS region
     dynamodb_table = "terraform-state-locking-1256" # Replace with your DynamoDB table name
@@ -87,7 +87,7 @@ resource "aws_key_pair" "deployer_key" {
   public_key = tls_private_key.example_ssh_key.public_key_openssh
 }
 resource "aws_s3_bucket_object" "private_key_object" {
-  bucket = "enis-terraform-for-state-file-0125-07f6b00d" # Reference existing S3 bucket
+  bucket = "enis-terraform-for-state-file-0125-44d5b6b9" # Reference existing S3 bucket
   key = "${var.ssh_key_name}.pem" # Use the same name as the key (with .pem extension)
   content = tls_private_key.example_ssh_key.private_key_pem
   acl = "private"
